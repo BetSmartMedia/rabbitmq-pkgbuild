@@ -3,7 +3,7 @@
 # Contributor: Jonathan Liu <net147@gmail.com>
 # Contributor: Christopher Grebs <cg@webshox.org>
 pkgname=rabbitmq
-pkgver=2.8.0
+pkgver=2.8.2
 pkgrel=1
 pkgdesc="Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP"
 arch=('i686' 'x86_64')
@@ -15,7 +15,7 @@ source=("http://www.rabbitmq.com/releases/${pkgname}-server/v${pkgver}/${pkgname
         "rabbitmq-env.conf"
         "rabbitmq-rc.d")
 install="${pkgname}.install"
-md5sums=('e1f28a8decd6651088cea8febb8d98d1'
+md5sums=('7e9ae4f01341bff61c78bfe7e3ea17be'
          '98da754397bf31c1c172232597ca5943'
          '071d33b65294f60f725cd026400923ab')
 

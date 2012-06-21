@@ -27,11 +27,12 @@ package() {
   cp -R ${pkgname}_server-${pkgver}/* "${pkgdir}/${libdir}"
   
   for script in ${pkgdir}/${libdir}/sbin/*; do
+    script=$(echo $script | sed -e "s,${pkgdir},,")
     ln -s "${script#${pkgdir}}" "${pkgdir}/usr/sbin/" 
   done
 
   install -D rabbitmq-env.conf "${pkgdir}/etc/rabbitmq/rabbitmq-env.conf"
-  sed -i "s,^SYS_PREFIX=.*$,SYS_PREFIX='${libdir}'," "${pkgdir}/${libdir}/sbin/rabbitmq-defaults"
+  sed -i "s,^SYS_PREFIX=.*$,SYS_PREFIX='/${libdir}'," "${pkgdir}/${libdir}/sbin/rabbitmq-defaults"
   install -D rabbitmq-rc.d "${pkgdir}/etc/rc.d/rabbitmq"
 }
 
